@@ -8,7 +8,7 @@ pipeline {
                 }
                 
                 timeout(time:1, unit:'MINUTES'){
-                    sh "./checkHaHa"
+                    sh "./health-check.sh"
                 }
             }
         }
