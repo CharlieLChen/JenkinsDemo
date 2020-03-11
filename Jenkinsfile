@@ -11,8 +11,7 @@ pipeline {
                     sh "./health-check.sh"
                 }
             }
-        }
-       post{
+                   post{
                     always{
                         sh "echo always"
                     }
@@ -28,5 +27,8 @@ pipeline {
                     }
                 }
         
+    }
+            
+            
     }
 }
