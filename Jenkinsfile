@@ -10,7 +10,9 @@ pipeline {
                 timeout(time:3, unit:'MINUTES'){
                     sh "./health-check.sh"
                 }
-                post{
+            }
+        }
+       post{
                     always{
                         sh "echo always"
                     }
@@ -25,7 +27,6 @@ pipeline {
                          echo 'For example, if the Pipeline was previously failing but is now successful'
                     }
                 }
-            }
-        }
+        
     }
 }
