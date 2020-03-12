@@ -6,10 +6,6 @@ pipeline {
                 retry(3){
                     sh "./fakeScript.sh"
                 }
-                
-                timeout(time:3, unit:'MINUTES'){
-                    sh "./health-check.sh"
-                }
             }
                    post{
                     always{
@@ -28,7 +24,11 @@ pipeline {
                 }
         
     }
-            
+            stage('Sanity check') {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+        }      
             
     }
 }
